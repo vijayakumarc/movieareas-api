@@ -1,12 +1,15 @@
 import express from "express";
 import router from "./routes/movies.route.js";
+import connectDB from "./lib/db.js";
 
 const app = express()
 
 const PORT = 6969;
 
+connectDB()
+
 app.get("/", (req, res) => {
-  res.json({ msg: "Welcome Students!!" });
+  res.json({ msg: "Welcome Students!" });
 });
 
 //CRUD Functionality of move

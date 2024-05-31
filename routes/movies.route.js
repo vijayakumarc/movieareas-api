@@ -1,28 +1,24 @@
 import express from "express";
+import {
+  MoiveCreate,
+  MoiveDelete,
+  MoiveUpdate,
+  MovieIndex,
+} from "../controller/movie.controller.js";
 
 const router = express.Router();
 
-
-
 //For Reading movies
-router.get("/", (req,res) => {
-res.send('Get all movies')
-});
+router.get("/", MovieIndex);
 
 //For Creating movies
-router.post("/", (req,res) => {
-    res.send('Create all movies')
-});
+router.post("/", MoiveCreate);
 
 //For Updating movie
-router.put("/:id", (req,res) => {
-    res.send('Update movies')
-});
+router.put("/:id", MoiveUpdate);
 
 //For Deleting movie
 
-router.delete("/:id", (req,res) => {
-    res.send('delete movies')
-});
+router.delete("/:id", MoiveDelete);
 
 export default router;
